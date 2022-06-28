@@ -2,18 +2,23 @@
 #include<math.h>
 int main()
 {
-    int n,q,r,c,sum=0;
-    scanf("%d",&n);
-    c=log10(n)+1;
-    q=n;
-    while(q)
+    int a;
+    scanf("%d",&a);
+    int rev=0,b,i,sq,sum=0,temp=a;
+    while (temp>0)
     {
-        r=q%10;
-        sum=sum+pow(r,c);
-        c--;
-        q=q/10;
+        b=temp%10;
+        rev=(rev*10)+b;
+        temp=temp/10;
     }
-    if(sum==n)
+    for (i=1; rev>0; i++)
+    {
+        b=rev%10;
+        sq=pow(b,i);
+        sum+=sq;
+        rev=rev/10;
+    }
+    if (sum==a)
     {
         printf("True");
     }
@@ -21,4 +26,5 @@ int main()
     {
         printf("False");
     }
+    return 0;
 }
