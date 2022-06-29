@@ -1,19 +1,24 @@
 #include<stdio.h>
 int main()
 {
-    int n,n1=0,n2=1,n3,i,c=0;
+    int a=0,b=1,c,n,i,arr[100],count=0;
     scanf("%d",&n);
-    for(i=2;i<n;i++)
+    for (i=0; i<100; i++)
     {
-        n3=n1+n2;
-        if(n3==n)
-        {
-            c=c+1;
-        }
-        n1=n2;
-        n2=n3;
+        arr[i]=a;
+        c=a+b;
+        a=b;
+        b=c;
     }
-    if(c==1)
+    for (i=0; i<100; i++)
+    {
+        if (n==arr[i])
+        {
+            count=1;
+            break;
+        }
+    }
+    if (count==1)
     {
         printf("True");
     }
@@ -21,4 +26,5 @@ int main()
     {
         printf("False");
     }
+    return 0;
 }
